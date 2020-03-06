@@ -14,4 +14,4 @@ RUN chmod +x /usr/local/bin/*.sh /entrypoint.sh
 VOLUME [ "/data" ]
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/local/bin/start.sh"]
+CMD ["start.sh"]
