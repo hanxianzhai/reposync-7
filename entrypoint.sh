@@ -6,7 +6,7 @@ if expr "$1" : "start" 1>/dev/null || [ "$1" = "update" ]; then
       echo "mirrors.aliyun.com is ok ..."
    else
       echo "Can't connect mirrors.aliyun.com,please check network ..."
-      exit 1
+      echo "proxy=http://10.156.10.156:31288" >> /etc/yum.conf
    fi
 fi
 
