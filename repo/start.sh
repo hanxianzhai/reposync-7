@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#同步软件包
+
+echo 开始从mirrors.aliyun.com同步数据
+reposync -np /data/repo/CentOS/7/x86_64/
+echo 数据同步结束
+
+#更新元数据
+
+echo 开始更新元数据
+createrepo --update /data/repo/CentOS/7/x86_64/base/
+createrepo --update /data/repo/CentOS/7/x86_64/extras/
+createrepo --update /data/repo/CentOS/7/x86_64/updates/
+createrepo --update /data/repo/CentOS/7/x86_64/epel/
+createrepo --update /data/repo/CentOS/7/x86_64/docker-ce-stable/
+createrepo --update /data/repo/CentOS/7/x86_64/docker-ce-edge/
